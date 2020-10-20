@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cs.mapper.NewsMapper">
+    <!--//查询新闻表所有记录 select * from news-->
+    <select id="findAllNews" resultType="News">
+        select * from news
+    </select>
+
+    <!--//查询新闻表所有信息的总记录数 select count(*) from news-->
+    <select id="findByNewsCount" resultType="int">
+        select count(*) from news
+    </select>
+
+    <!--修改新闻ID为XX的新闻标题和新闻内容 -->
+    <update id="updateNews" parameterType="news">
+		update news set
+		newTitle = #{newTitle},newsContent = #{newsContent}
+		where newsID = #{newsID}
+    </update>
+
+    <!--删除新闻ID为XX的新闻-->
+    <delete id="deleteNews" parameterType="int">
+        delete from news where newsID = #{newsID}
+    </delete>
+
+
+
+</mapper>

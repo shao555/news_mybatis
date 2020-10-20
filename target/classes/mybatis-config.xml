@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <package name="com.cs.entity"/>
+    </typeAliases>
+    <!--链接数据库环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/newsmanager?useUnicode=true&amp;characterEncoding=utf-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="114514"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--引入映射文件-->
+    <mappers>
+
+
+
+        <mapper resource="mapper/NewsMapper.xml"></mapper>
+        <mapper resource="mapper/TopTitleMapper.xml"></mapper>
+        <mapper resource="mapper/UserInfoMapper.xml"></mapper>
+        <!--        <mapper class="com.cs.mapper.Smbms_AddressMapper"></mapper>-->
+        <!--        <mapper class="com.cs.mapper.Smbms_BillMapper"></mapper>-->
+        <!--        <mapper class="com.cs.mapper.Smbms_ProviderMapper"></mapper>-->
+        <!--        <mapper class="com.cs.mapper.Smbms_RoleMapper"></mapper>-->
+        <!--        <mapper class="com.cs.mapper.Smbms_UserMapper"></mapper>-->
+
+    </mappers>
+
+
+</configuration>
